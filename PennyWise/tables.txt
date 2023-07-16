@@ -1,0 +1,77 @@
+CREATE TABLE users (
+    -> id SERIAL,
+    -> username VARCHAR(50),
+    -> password VARCHAR(50),
+    -> emailid VARCHAR(50),
+    -> phoneno VARCHAR(20),
+    -> CONSTRAINT pk_users PRIMARY KEY (username),
+    -> CONSTRAINT username_unique UNIQUE (emailid),
+    -> CONSTRAINT emailid_unique  UNIQUE(username),
+    -> CONSTRAINT phoneno_unique UNIQUE (phoneno)
+    -> );
+
+CREATE TABLE group_table (
+  groupid SERIAL,
+  groupname VARCHAR(50),
+  CONSTRAINT group_table_pk PRIMARY KEY (groupid)
+);
+
+
+CREATE TABLE user_groups (
+  username VARCHAR(50),
+  groupid INTEGER REFERENCES group_table(groupid),
+  CONSTRAINT user_groups_pk PRIMARY KEY (username, groupid),
+  CONSTRAINT username_fk FOREIGN KEY (username) REFERENCES users (username),
+  CONSTRAINT groupid_fk FOREIGN KEY (groupid) REFERENCES group_table (groupid)
+);
+
+CREATE TABLE user_groups (
+  username VARCHAR(50),
+  groupid INTEGER REFERENCES group_table(groupid),
+  CONSTRAINT user_groups_pk PRIMARY KEY (username, groupid),
+  CONSTRAINT username_fk FOREIGN KEY (username) REFERENCES users (username)
+);
+
+
+
+CREATE TABLE expenses (
+  groupid INTEGER REFERENCES group_table(groupid),
+  expenseid SERIAL,
+  description VARCHAR(255),
+  amount DECIMAL(10,2),
+  payer VARCHAR(50),
+  date DATE,
+  CONSTRAINT expense_pk PRIMARY KEY (groupid, expenseid),
+  CONSTRAINT payer_fk FOREIGN KEY (payer) REFERENCES user_groups(username)
+);
+
+CREATE TABLE expenses (
+  groupid SERIAL REFERENCES group_table(groupid),
+  expenseid SERIAL,
+  description VARCHAR(255),
+  amount DECIMAL(10,2),
+  payer VARCHAR(50),
+  date DATE,
+  CONSTRAINT expense_pk PRIMARY KEY (groupid, expenseid),
+  CONSTRAINT expense_group_fk FOREIGN KEY (groupid) REFERENCES group_table(groupid),
+  CONSTRAINT payer_fk FOREIGN KEY (payer) REFERENCES user_groups(username)
+);
+
+CREATE TABLE expense (
+    expenseid SERIAL AUTO_INCREMENT,
+    groupid INTEGER,
+    payer VARCHAR(50),
+    description VARCHAR(255),
+    amount DECIMAL(10, 2) NOT NULL,
+    date DATE NOT NULL,
+    CONSTRAINT expense_pk PRIMARY KEY (groupid, expenseid),
+    FOREIGN KEY (groupid) REFERENCES groups(id),
+    FOREIGN KEY (payer) REFERENCES users(username)
+);
+
+DELETE FROM users
+WHERE username = 'new_user';
+
+SELECT table_name
+FROM information_schema.tables
+WHERE table_schema = 'pennywise';

@@ -1,0 +1,87 @@
+/* Body Styles */
+body {
+    background-image: url("back2.jpg");
+	background-size: cover;
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+  }
+
+  .error-message {
+    color: red;
+  }
+  
+  /* Form Styles */
+  form {
+    background-color: rgb(168, 117, 164);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 50px auto;
+    max-width: 250px;
+    padding: 30px;
+    width: 95%;
+  }
+  
+  form h2 {
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+    font-size: 36px;
+    margin: 0 0 20px;
+  }
+  
+  form label {
+    color: rgb(66, 12, 66);
+    display: block;
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  
+  form input[type="text"],
+  form input[type="password"] {
+    border: none;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    width: 95%;
+  }
+  
+  form input[type="submit"]{
+    background-color: rgb(66, 12, 66);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  form input[type="submit"]:hover {
+    background-color: rgb(52, 14, 48);
+  }
+  
+  #sign {
+    background-color: rgb(66, 12, 66);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    margin-right: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #sign :hover {
+    background-color: rgb(52, 14, 48);
+  }
+  

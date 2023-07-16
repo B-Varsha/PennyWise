@@ -1,0 +1,62 @@
+body {
+  background-image: url("back2.jpg");
+background-size: cover;
+  font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+}
+  
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+  
+  button {
+    background-color: rgb(168, 117, 164); /* Green */
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  h3 {
+    color:white;
+  }
+  button:hover {
+    background-color: rgb(161, 32, 151);
+    font-weight: bold;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(161, 32, 151);
+    color: white;
+    font-weight: bold;
+  }
+
+  h2 {
+    color: white;
+    font-size: 40px;
+    font-family: 'Parisienne', cursive;
+    text-shadow: 2px 2px rgb(110, 45, 106);
+    text-align: center;
+    animation: textAnimation 2s infinite;
+  }
+
+  @keyframes textAnimation {
+    0% {
+      color: rgb(66, 12, 66);
+      transform: scale(1);
+    }
+    50% {
+      color: rgb(181, 90, 175);
+      transform: scale(1.2);
+    }
+    100% {
+      color: rgb(254, 204, 251);
+      transform: scale(1);
+    }
+  }
+  
