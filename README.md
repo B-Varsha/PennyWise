@@ -1,1 +1,2 @@
 # PennyWise
+Expense Management System
