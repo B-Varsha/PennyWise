@@ -44,10 +44,6 @@ Deploy the application on an Apache Tomcat Server.
 Open your browser and visit http://localhost:8080/pennywise to access PennyWise.
 
 
-## Contributing
-
-If you would like to contribute to PennyWise, please follow our [contribution guidelines](CONTRIBUTING.md).
-
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
